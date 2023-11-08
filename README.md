@@ -1,1 +1,2 @@
-# Basic_C
+# Buổi 1
+`#include <iostream>`
