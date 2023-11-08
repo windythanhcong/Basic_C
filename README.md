@@ -1,2 +1,8 @@
 # Buổi 1
-`#include <iostream>`
+## Biến:
+`#include <iostream>
+using namespace std;
+int main(){
+  return0;
+}`
+
