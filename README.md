@@ -54,7 +54,7 @@ int main(){
 }
 ```
 * `#include <stdio.h>` dùng để sử dụng các chức năng nhập, xuất trong ngôn ngữ C.
-* ` unsigned char var = 200;` khai báo biến var có giá trị là 200 (giá trị nằm trong phạm vi biểu diễn 0->255).
+* ` unsigned char var = 200;` khai báo biến var là kiểu ký tự có giá trị là 200 (giá trị nằm trong phạm vi biểu diễn 0->255).
 * ` int main()` hàm chính thực hiện các lệnh trong chương trình.
 * ` printf("size : %d\n byte", sizeof(var));` dùng để đọc kích thước của biến **var**.
 * ` printf("ky tu :%c\n",var);` xuất ký tự trong bảng mã ASCII.( kq : ╚	).
