@@ -29,10 +29,11 @@ Một giá trị kiểu char chiếm 1byte = 8bit và được biểu diễn th�
 
  > Unsigned char: Không dấu, chỉ có thể lưu các giá trị không âm (từ 0 trở lên).
 
-| Kiểu | Số ký tự | Kích thước | Phạm vi biểu diễn |
-| :--- | :--- | :--- | :--- |
-| Char (Signed char) | 256 | 1 byte | -128 đến 127
-| Unsigned char | 256 | 1 byte | 0 đến 255 | 
+
+| Kiểu | Số ký tự | Kích thước | Phạm vi biểu diễn | Định dạng
+| :--- | :--- | :--- | :--- | :---
+| Char (Signed char) | 256 | 1 byte | -128 đến 127|%c
+| Unsigned char | 256 | 1 byte | 0 đến 255 | %c
 
 **Cách tính phạm vi biểu diễn :**
 * Đối với kiểu Char (Signed char) = -2^7 đến 2^7-1 (-128 đến 127).
@@ -62,4 +63,15 @@ int main(){
 * ` printf("ky tu :%c\n",var);`giá trị **var** vượt quá giới hạn tối đa biểu diễn,
 200+200=144 ( kq : É	).
 #### 1.2. Kiểu số nguyên (integer)
+Trong ngôn ngữ C cho phép sử dụng số nguyên kiểu int, số nguyên dài kiểu long và số nguyên không dấu kiểu unsigned có kích thước khác nhau.
+
+| Kiểu |Kích thước | Phạm vi biểu diễn | Định dạng |
+| :--- | :--- | :--- | :---
+| int | 2->4 byte | -2^15 đến 2^15-1 -> -2^31 đến 2^31-1 |%d, %i
+| short int |2 byte | -2^15 đến 2^15-1 | %hd
+| long int | 4->8 byte | -2^31 đến 2^31-1 -> -2^63 đến 2^63-1 | %ld, %li
+| long long int | 8 byte | -2^63 đến 2^63-1 | %lld, %lli
+| Unsigned int | 2->4 byte | 0 đến 2^16-1 -> 0 đến 2^32-1 | %u
+| Unsigned long int | 4 byte | 0 đến 2^32-1 | %lu
+| Unsigned long long int | 8 byte |  0 đến 2^64-1 | %llu
 
