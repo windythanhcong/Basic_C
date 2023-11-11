@@ -200,4 +200,4 @@ return 0;
 ```
 * `#include <stdio.h>` Thư viện nhập, xuất ngôn ngữ C và giao tiếp với màn hình console.
 * `Hàm hiển thị` Khai báo hàm **Hienthi** kiểu trả về void (không trả về giá trị), không có tham số, thân hàm thực hiện lệnh xuất màn hình `hello world!`.
-* ` Hàm main` Trong hàm main, hàm Hienthi được gọi và thực hiện lệnh xuất ra màn hình.
+* `Hàm main` Trong hàm main, hàm Hienthi được gọi và thực hiện lệnh xuất ra màn hình.
