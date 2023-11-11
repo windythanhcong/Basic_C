@@ -137,3 +137,66 @@ int main(){
 * `float var=3.14` khai báo biến **var** có kiểu float = 3.14.
 * `printf("Gia tri var =%f\n",var);` xuất ra màn hình giá trị var kiểu định dạng %f, có giá trị 3.140000 (mặc định hiển trị 6 số thập phân).
 * `return 0;` chương trình thực hiện xong và kết thúc.
+
+## Hàm:
+Trong ngôn ngữ lập trình, hàm là một khối mã được đặt trên, có thể tái sử dụng, và thực hiện nhiệm vụ cụ thể. Hàm giúp chia nhỏ chương trình thành đơn vị nhỏ, dễ quản lý và tái sử dụng.
+
+Một địng nghĩa hàm bao gồm:
+
+ ``` c
+ <Kiểu trả về> <Tên hàm> ( danh sách tham số)
+{
+     Thân hàm
+} 
+```
+* Kiểu trả về: là dạng dữ liệu mà hàm trả về, có thể giá về một giá trị hoặc là không trả về giá trị nào cả đó là hàm **void**.
+* Tên hàm: có thể gọi hàm thực giện nhiệm vụ cụ thể và tái sử dụng khi cần.
+* Tham số: khi gọi hàm cần phải truyền danh sách tham số. Danh sách tham số có các kiểu, thứ tự, số lượng tham số của hàm.
+* Thân hàm: Tập hợp các lệnh xác định mà hàm có nhiệm vụ giải quyết khi được gọi hàm.
+  
+**Sau đây là ví dụ gọi hàm vào chương trình, trả giá trị (không phải hàm void) :**
+
+```c
+#include <stdio.h>
+#include <stdint.h>
+
+uint8_t tong (uint8_t a, uint8_t b){ 
+    return a+b;
+}
+
+float thuong(uint8_t a, uint8_t b){
+    if(b==0){
+        printf("ERROR!! mau bang 0\n");
+    }
+    return (float)a/b; 
+}
+
+int main(int arg, char const *argv){
+    printf("tong la: %d \n", tong(7,8));
+
+    printf("thuong la: %f \n", thuong(7,8));
+    return 0;
+}
+```
+* `#include <stdio.h>` Thư viện nhập, xuất ngôn ngữ C và giao tiếp với màn hình console.
+* `#include <stdint.h>` Thư viện định nghĩa kiểu dữ liệu có kích thước cố định.
+* ` Hàm tổng ` Khai báo hàm **tổng**, kiểu trả về là unsigned int có kích thước 8bit=1byte có 2 tham số **a,b** được khai báo kiểu dữ liệu unsigned int có kích thước 8bit=1byte, thân hàm có chức năng trả về kết quả **a+b** khi được gọi hàm.
+* `Hàm thương` Khai báo hàm **thương**, kiểu trả về là float có kích thước 4byte=32bit có 2 tham số **a,b** được khai báo kiểu dữ liệu unsigned int có kích thước 8bit=1byte, thân hàm sẽ kiểm trả tham số **b** nếu bằng 0 sẽ báo lổi ra màn hình, trả về kết quả là **a/b** vì là khai báo 2 tham số nguyên không dấu nên phải ép kiểu **(float)** để trả về số thực.
+* `printf("tong la: %d \n", tong(7,8));`  Khi được gọi hàm **tong** sẽ truyển 2 tham số 7, 8 và thực hiện phép tính a+b trả về kết quả 15.
+* ` printf("thuong la: %f \n", thuong(7,8));` Khi gọi hàm **thuong** sẽ truyển vào 2 tham số 7, 8 và thực hiện phép tính a/b trả về kết quả 0.875000.
+
+**Sau đây là ví dụ gọi hàm vào chương trình, không trả về giá trị (hàm void) :**
+
+```c
+#include <stdio.h>
+void Hienthi (){   
+    printf("hello world!");
+}
+main(){
+    Hienthi();
+return 0;
+}
+```
+* `#include <stdio.h>` Thư viện nhập, xuất ngôn ngữ C và giao tiếp với màn hình console.
+* `Hàm hiển thị` Khai báo hàm **Hienthi** kiểu trả về void (không trả về giá trị), không có tham số, thân hàm thực hiện lệnh xuất màn hình `hello world!`.
+* ` Hàm main` Trong hàm main, hàm Hienthi được gọi và thực hiện lệnh xuất ra màn hình.
