@@ -115,7 +115,7 @@ int main(int arg, char const *argv){
     return 0;
 }
 ``` 
-### 1.3 Kiểu phẩy động
+#### 1.3 Kiểu phẩy động
 
 Trong ngôn ngữ C, kiểu dữ liệu phẩy động được sử dụng để biểu diễn số thực, hay biểu diễn giá trị có phần thập phân. Có ba kiểu dữ liệu phổ biến:
 | Kiểu |Kích thước | Phạm vi biểu diễn | Định dạng |
