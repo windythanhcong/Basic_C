@@ -54,7 +54,7 @@ int main(){
     return 0;
 }
 ```
-* `#include <stdio.h>` dùng để sử dụng các chức năng nhập, xuất trong ngôn ngữ C.
+* `#include <stdio.h>` Thư viện nhập, xuất ngôn ngữ C và giao tiếp với màn hình console.
 * ` unsigned char var = 200;` khai báo biến var là kiểu ký tự có giá trị là 200 (giá trị nằm trong phạm vi biểu diễn 0->255).
 * ` int main()` hàm chính thực hiện các lệnh trong chương trình.
 * ` printf("size : %d\n byte", sizeof(var));` dùng để đọc kích thước của biến **var**.
@@ -95,8 +95,8 @@ int main(int arg, char const *argv){
     return 0;
 }
 ```
-* `#include <stdio.h>` thư viện giao tiếp với màn hình console
-* `#include <stdint.h>` thư viện sử dụng biến `int8_t` 
+* `#include <stdio.h>` Thư viện nhập, xuất ngôn ngữ C và giao tiếp với màn hình console.
+* `#include <stdint.h>` Thư viện định nghĩa kiểu dữ liệu có kích thước cố định.
 * `int8_t var;` biến **var** được khai báo kiểu số nguyên (số âm và dương) có kích thước 1byte=8bit (-128 đến 127 hoặc -2^7 đến 2^7-1).
 * `printf("Size :%dbyte\n",sizeof(var));` xác định kích thước của biến var và xuất ra màn hình.
 * ` var = 200;` gán biến **var**=200.
@@ -134,7 +134,7 @@ int main(){
     return 0;
 }
 ```
-* `#include <stdio>` giao tiếp màn hình console.
+* `#include <stdio.h>` Thư viện nhập, xuất ngôn ngữ C và giao tiếp với màn hình console.
 * `float var=3.14` khai báo biến **var** có kiểu float = 3.14.
 * `printf("Gia tri var =%f\n",var);` xuất ra màn hình giá trị var kiểu định dạng %f, có giá trị 3.140000 (mặc định hiển trị 6 số thập phân).
 * `return 0;` chương trình thực hiện xong và kết thúc.
