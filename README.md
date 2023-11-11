@@ -74,6 +74,7 @@ Trong ngôn ngữ C cho phép sử dụng số nguyên kiểu int, số nguyên 
 | Unsigned int | 2->4 byte | 0 đến 2^16-1 -> 0 đến 2^32-1 | %u
 | Unsigned long int | 4 byte | 0 đến 2^32-1 | %lu
 | Unsigned long long int | 8 byte |  0 đến 2^64-1 | %llu
+
 **Cách tính phạm vi biểu diễn :**
 
 * Đối với int ( gồm số thực và số nguyên) 2->4byte = 16bit -> 32bit sẽ được tính theo cách sau, 2byte = -2^15 đến 2^15-1 (-32768 đến 32767) và 4byte = -2^31 đến 2^31-1.
