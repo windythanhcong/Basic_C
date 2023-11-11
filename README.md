@@ -74,4 +74,66 @@ Trong ngôn ngữ C cho phép sử dụng số nguyên kiểu int, số nguyên 
 | Unsigned int | 2->4 byte | 0 đến 2^16-1 -> 0 đến 2^32-1 | %u
 | Unsigned long int | 4 byte | 0 đến 2^32-1 | %lu
 | Unsigned long long int | 8 byte |  0 đến 2^64-1 | %llu
+**Cách tính phạm vi biểu diễn :**
 
+* Đối với int ( gồm số thực và số nguyên) 2->4byte = 16bit -> 32bit sẽ được tính theo cách sau, 2byte = -2^15 đến 2^15-1 (-32768 đến 32767) và 4byte = -2^31 đến 2^31-1.
+* Đối với unsigned int ( chỉ tính số nguyên )
+2->4byte = 8bit -> 16bit sẽ được tính theo cách sau, 2byte = 0 đến 2^16-1 (0 đến 65536 ) và 4byte = 0 đến 2^32-1.
+
+Ví dụ, đây là khai báo kiểu dữ liệu integer kích thước 1 byte 
+```c
+#include <stdio.h>
+#include <stdint.h>
+int8_t var;
+
+int main(int arg, char const *argv){
+    printf("Size :%dbyte\n",sizeof(var));
+    var = 200;
+    printf("var = %d\n",var);
+
+    return 0;
+}
+```
+* `#include <stdio.h>` thư viện giao tiếp với màn hình console
+* `#include <stdint.h>` thư viện sử dụng biến `int8_t` 
+* `int8_t var;` biến **var** được khai báo kiểu số nguyên (số âm và dương) có kích thước 1byte=8bit (-128 đến 127 hoặc -2^7 đến 2^7-1).
+* `printf("Size :%dbyte\n",sizeof(var));` xác định kích thước của biến var và xuất ra màn hình.
+* ` var = 200;` gán biến **var**=200.
+* ` printf("var = %d\n",var);` xuất màn hình giá trị **var**, nhưng phạm vi biểu diễn của **var** chỉ từ -128 đến 127 nên xuất ra màn hình **var**=-56.
+
+Còn khi khai báo biến unsigned integer có kích thước 1 byte và giá trị biến **var** = 200 thì khi xuất màn hình sẽ hiện giá trị **var** = 200 ( Vì phạm vi biểu diễn từ 0 đến 255).
+```c
+#include <stdio.h>
+#include <stdint.h>
+uint8_t var;
+
+int main(int arg, char const *argv){
+    printf("Size :%dbyte\n",sizeof(var));
+    var = 200;
+    printf("var = %d\n",var);
+
+    return 0;
+}
+``` 
+### 1.3 Kiểu phẩy động
+
+Trong ngôn ngữ C, kiểu dữ liệu phẩy động được sử dụng để biểu diễn số thực, hay biểu diễn giá trị có phần thập phân. Có ba kiểu dữ liệu phổ biến:
+| Kiểu |Kích thước | Phạm vi biểu diễn | Định dạng |
+| :--- | :--- | :--- | :---
+| float | 4 byte | 3.4E-38 đến 3.4E+38 |%f
+| double |8 byte | 1.7E-308 đến 1.7E+308 | %lf
+| long double | 10 byte | 3.4E-4932 đến 1.1E-4932 | %Lf
+
+Ví dụ, sau đây là khai báo kiểu dữ liệu float
+```c
+#include <stdio.h>
+float var=3.14;
+int main(){
+    printf("Gia tri var =%f\n",var);
+    return 0;
+}
+```
+* `#include <stdio>` giao tiếp màn hình console.
+* `float var=3.14` khai báo biến **var** có kiểu float = 3.14.
+* `printf("Gia tri var =%f\n",var);` xuất ra màn hình giá trị var kiểu định dạng %f, có giá trị 3.140000 (mặc định hiển trị 6 số thập phân).
+* `return 0;` chương trình thực hiện xong và kết thúc.
